@@ -70,7 +70,7 @@
                 <th>ID</th>
                 <th>Usuario</th>
 
-                <th>Dirección</th>
+                <th>Detalle</th>
                 <th>fecha y hora</th>
                 <th>Acción</th>
                 </thead>
@@ -88,9 +88,9 @@
                         ?>
                         <tr>
                             <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['firstname']; ?></td>
+                            <td><?php echo $row['usuario']; ?></td>
 
-                            <td><?php echo $row['address']; ?></td>
+                            <td><?php echo $row['detalle']; ?></td>
                             <td><?php echo $row['fechaHora']; ?></td>
                             <td>
                                 <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"

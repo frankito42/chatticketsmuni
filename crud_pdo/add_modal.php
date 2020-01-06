@@ -14,18 +14,10 @@
 			<form method="POST" action="add.php">
 				<div class="row form-group">
 					<div class="col-sm-2">
-						<label class="control-label" style="position:relative; top:7px;">Nombre:</label>
+						<label class="control-label" style="position:relative; top:7px;">Usuario:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="firstname">
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-sm-2">
-						<label class="control-label" style="position:relative; top:7px;">Apellido:</label>
-					</div>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="lastname">
+						<input type="text" class="form-control" name="usuario">
 					</div>
 				</div>
 				<div class="row form-group">
@@ -33,7 +25,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Detalle:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="address">
+						<input type="text" class="form-control" name="detalle">
 					</div>
 				</div>
 
@@ -42,7 +34,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Fecha:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="fechaHora" value="<?php  echo date('D, d M Y H:i:s')?>">
+						<input type="text" class="form-control" name="fechaHora" value="<?php  echo date('D, d M Y H:i:s')?>" readonly="readonly">
 					</div>
 				</div>
             </div> 

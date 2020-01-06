@@ -22,9 +22,9 @@
 			$id = $_GET['id'];
 			$firstname = $_POST['firstname'];
 			$lastname = $_POST['lastname'];
-			$address = $_POST['address'];
+			$detalle = $_POST['detalle'];
 
-			$sql = "UPDATE members SET firstname = '$firstname', lastname = '$lastname', address = '$address' WHERE id = '$id'";
+			$sql = "UPDATE members SET firstname = '$firstname', lastname = '$lastname', detalle = '$detalle' WHERE id = '$id'";
 			// declaración if-else en la ejecución de nuestra consulta
 			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Los datos se actualizaron' : 'Ocurrio un error. No se pudo actualizar';
 
