@@ -78,30 +78,54 @@
                 <?php
                 // incluye la conexión
                 include_once('connection.php');
-                
+                //echo $_SESSION['privilegio'];
 
                 $database = new Connection();
                 $db = $database->open();
                 try {
                     $sql = 'SELECT * FROM members';
-                    foreach ($db->query($sql) as $row) {
-                        ?>
-                        <tr>
-                            <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['usuario']; ?></td>
-
-                            <td><?php echo $row['detalle']; ?></td>
-                            <td><?php echo $row['fechaHora']; ?></td>
-                            <td>
-                                <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
-                                   data-toggle="modal"><span class="fa fa-edit"></span> Editar</a>
-                                <a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm"
-                                   data-toggle="modal"><span class="fa fa-trash"></span> Eliminar</a>
-                            </td>
-                            <?php include('edit_delete_modal.php'); ?>
-                        </tr>
-                        <?php
+                    if ($_SESSION['privilegio'] == 0) {
+                        foreach ($db->query($sql) as $row) {
+                            ?>
+                            <tr>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['usuario']; ?></td>
+    
+                                <td><?php echo $row['detalle']; ?></td>
+                                <td><?php echo $row['fechaHora']; ?></td>
+                                 
+                                <td>
+                                    <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
+                                       data-toggle="modal"><span class="fa fa-edit"></span> Editar</a>
+                                    <a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm"
+                                       data-toggle="modal"><span class="fa fa-trash"></span> Eliminar</a>
+                                </td>
+                                <?php include('edit_delete_modal.php'); ?>
+                            </tr>
+                            <?php
+                        }
+                    }elseif ($_SESSION['privilegio'] == 1) {
+                        foreach ($db->query($sql) as $row) {
+                            ?>
+                            <tr>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['usuario']; ?></td>
+    
+                                <td><?php echo $row['detalle']; ?></td>
+                                <td><?php echo $row['fechaHora']; ?></td>
+                                 
+                                <td>
+                                    <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
+                                       data-toggle="modal"><span class="fa fa-edit"></span> Editar</a>
+                                    <a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm"
+                                       data-toggle="modal"><span class="fa fa-trash"></span> Eliminar</a>
+                                </td>
+                                <?php include('edit_delete_modal.php'); ?>
+                            </tr>
+                            <?php
+                        }
                     }
+                    
                 } catch (PDOException $e) {
                     echo "There is some problem in connection: " . $e->getMessage();
                 }
