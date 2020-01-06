@@ -20,9 +20,9 @@
 		$db = $database->open();
 		try{
 			// hacer uso de una declaración preparada para evitar la inyección de sql
-			$stmt = $db->prepare("INSERT INTO members (usuario, detalle,fechaHora) VALUES (:usuario, :detalle,:fechaHora)");
+			$stmt = $db->prepare("INSERT INTO members (usuario, detalle,estado,fechaHora) VALUES (:usuario, :detalle,:estado,:fechaHora)");
 			// declaración if-else en la ejecución de nuestra declaración preparada
-			$_SESSION['message'] = ( $stmt->execute(array(':usuario' => $_POST['usuario'] , ':detalle' => $_POST['detalle'], ':fechaHora' => $_POST['fechaHora'])) ) ? 'Miembro agregado correctamente' : 'Something went wrong. Cannot add member';	
+			$_SESSION['message'] = ( $stmt->execute(array(':usuario' => $_POST['usuario'] , ':detalle' => $_POST['detalle'], ':estado' => $_POST['estado'], ':fechaHora' => $_POST['fechaHora'])) ) ? 'Miembro agregado correctamente' : 'Something went wrong. Cannot add member';	
 	    
 		}
 		catch(PDOException $e){

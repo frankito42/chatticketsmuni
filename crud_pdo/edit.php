@@ -20,11 +20,12 @@
 		$db = $database->open();
 		try{
 			$id = $_GET['id'];
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
+			$usuario = $_POST['usuario'];
+			$estado = $_POST['estado'];
 			$detalle = $_POST['detalle'];
+			$fechaHora = $_POST['fechaHora'];
 
-			$sql = "UPDATE members SET firstname = '$firstname', lastname = '$lastname', detalle = '$detalle' WHERE id = '$id'";
+			$sql = "UPDATE members SET usuario = '$usuario', estado = '$estado', detalle = '$detalle', fechahora = '$fechaHora' WHERE id = '$id'";
 			// declaración if-else en la ejecución de nuestra consulta
 			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Los datos se actualizaron' : 'Ocurrio un error. No se pudo actualizar';
 

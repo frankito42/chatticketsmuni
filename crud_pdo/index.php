@@ -73,6 +73,7 @@
 
                 <th>Detalle</th>
                 <th>fecha y hora</th>
+                <th>Estado</th>
                 <?php 
                 if ($privi == 0) {
                     echo "<th>Acción</th>";
@@ -101,6 +102,7 @@
     
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
+                                <td><?php echo $row['estado']; ?></td>
                                  
                                 <td>
                                     <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
@@ -119,9 +121,9 @@
                             <tr>
                                 <td><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['usuario']; ?></td>
-    
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
+                                <td><?php echo $row['estado']; ?></td>
                              
                             </tr>
                             <?php

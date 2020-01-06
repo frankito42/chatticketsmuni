@@ -31,6 +31,15 @@
 
 				<div class="row form-group">
 					<div class="col-sm-2">
+						<label class="control-label" style="position:relative; top:7px;">Estado:</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="estado" value="<?php  echo "pendiente"?>" readonly="readonly">
+					</div>
+				</div>
+				
+				<div class="row form-group">
+					<div class="col-sm-2">
 						<label class="control-label" style="position:relative; top:7px;">Fecha:</label>
 					</div>
 					<div class="col-sm-10">
