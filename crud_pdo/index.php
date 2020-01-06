@@ -66,13 +66,20 @@
             }
             ?>
             <table class="table table-bordered table-striped" style="margin-top:20px;">
+            <?php $privi = $_SESSION['privilegio']; ?>
                 <thead>
                 <th>ID</th>
                 <th>Usuario</th>
 
                 <th>Detalle</th>
                 <th>fecha y hora</th>
-                <th>Acción</th>
+                <?php 
+                if ($privi == 0) {
+                    echo "<th>Acción</th>";
+                }elseif ($privi == 1) {
+                    
+                }
+                ?>
                 </thead>
                 <tbody>
                 <?php
@@ -85,6 +92,7 @@
                 try {
                     $sql = 'SELECT * FROM members';
                     if ($_SESSION['privilegio'] == 0) {
+                        $privi = $_SESSION['privilegio'];
                         foreach ($db->query($sql) as $row) {
                             ?>
                             <tr>
@@ -105,6 +113,7 @@
                             <?php
                         }
                     }elseif ($_SESSION['privilegio'] == 1) {
+                        $privi = $_SESSION['privilegio'];
                         foreach ($db->query($sql) as $row) {
                             ?>
                             <tr>
