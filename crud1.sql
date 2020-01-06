@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-01-2020 a las 15:12:47
+-- Tiempo de generación: 06-01-2020 a las 23:46:44
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -30,11 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `members` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `address` text NOT NULL,
-  `fechaHora` varchar(40) NOT NULL
+  `usuario` varchar(30) NOT NULL,
+  `detalle` text NOT NULL,
+  `fechaHora` varchar(250) NOT NULL,
+  `estado` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `members`
+--
+
+INSERT INTO `members` (`id`, `usuario`, `detalle`, `fechaHora`, `estado`) VALUES
+(50, 'f', 'adsadasd', 'Mon, 06 Jan 2020 23:42:21', 'en curso');
 
 -- --------------------------------------------------------
 
@@ -46,17 +53,16 @@ CREATE TABLE `users` (
   `idUser` int(11) NOT NULL,
   `nombreUser` varchar(40) NOT NULL,
   `passwordUser` varchar(40) NOT NULL,
-  `privilegioUser` int(11) NOT NULL,
-  `estado` varchar(20) NOT NULL,
-  `fechaHora` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `privilegio` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`idUser`, `nombreUser`, `passwordUser`, `privilegioUser`, `estado`, `fechaHora`) VALUES
-(1, 'frankito42', '123', 0, '', '');
+INSERT INTO `users` (`idUser`, `nombreUser`, `passwordUser`, `privilegio`) VALUES
+(1, 'f', 'f', 0),
+(2, 'ff', 'ff', 1);
 
 --
 -- Índices para tablas volcadas
@@ -82,13 +88,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
