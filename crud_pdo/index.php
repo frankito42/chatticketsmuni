@@ -99,7 +99,6 @@
                             <tr>
                                 <td><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['usuario']; ?></td>
-    
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
                                 <td><?php echo $row['estado']; ?></td>
