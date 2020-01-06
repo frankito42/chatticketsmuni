@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/custom.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.css">
 </head>
-<body>
+<body onload="viewData()">
 <div class="container">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <a class="navbar-brand" href="code.html" target="_blank">AnthonCode</a>
@@ -101,7 +101,7 @@
                                 <td><?php echo $row['usuario']; ?></td>
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
-                                <td><?php echo $row['estado']; ?></td>
+                                <td id="estado" ><?php echo $row['estado']; ?></td>
                                  
                                 <td>
                                     <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
@@ -147,4 +147,20 @@
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="bootstrap/js/custom.js"></script>
 </body>
+<script>
+    function viewData() {
+        $.ajax({
+         type: "GET",
+         url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
+         success: function (response) {
+             $('#estado').html(response)
+         },
+         error: function() {
+            alert("Error");
+        }
+     }); 
+    }
+    setInterval(function(){ viewData(); }, 2000);
+</script> 
+
 </html>
