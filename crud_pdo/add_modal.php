@@ -17,7 +17,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Usuario:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="usuario">
+						<input type="text" class="form-control" name="usuario" value="<?php echo $_SESSION['usuario']; ?>" readonly="readonly">
 					</div>
 				</div>
 				<div class="row form-group">
@@ -25,7 +25,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Detalle:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="detalle">
+						<textarea name="detalle" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 					</div>
 				</div>
 

@@ -78,7 +78,7 @@
                 <?php
                 // incluye la conexión
                 include_once('connection.php');
-
+                
 
                 $database = new Connection();
                 $db = $database->open();
