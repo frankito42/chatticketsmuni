@@ -35,6 +35,8 @@
                     </select>
                 </div> -->
 
+
+                
 				<div class="row form-group">
 					<div class="col-sm-2">
 						<label class="control-label" style="position:relative; top:7px;">Detalle:</label>
