@@ -33,6 +33,7 @@
 						<input type="text" class="form-control" name="address" value="<?php echo $row['address']; ?>">
 					</div>
 				</div>
+				
             </div> 
 			</div>
             <div class="modal-footer">

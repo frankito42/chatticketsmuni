@@ -62,8 +62,8 @@
 			<table class="table table-bordered table-striped" style="margin-top:20px;">
 				<thead>
 					<th>ID</th>
-					<th>Nombre</th>
-					<th>Apellido</th>
+					<th>Usuario</th>
+				
 					<th>Dirección</th>
 					<th>fecha y hora</th>
 					<th>Acción</th>
@@ -73,7 +73,7 @@
 						// incluye la conexión
 						include_once('connection.php');
 
-						
+
 						$database = new Connection();
     					$db = $database->open();
 						try{	
@@ -83,7 +83,7 @@
 						    	<tr>
 						    		<td><?php echo $row['id']; ?></td>
 						    		<td><?php echo $row['firstname']; ?></td>
-						    		<td><?php echo $row['lastname']; ?></td>
+						    		
 						    		<td><?php echo $row['address']; ?></td>
 						    		<td><?php echo $row['fechaHora']; ?></td>
 						    		<td>
