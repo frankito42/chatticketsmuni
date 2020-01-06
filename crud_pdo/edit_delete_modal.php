@@ -18,25 +18,25 @@
 					</div>
 				</div>
 
-                <div class="row form-group">
+               <!--  <div class="row form-group">
 					<div class="col-sm-2">
 						<label class="control-label" style="position:relative; top:7px;">Estado:</label>
 					</div>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" name="estado" value="<?php echo $row['estado']; ?>">
 					</div>
-				</div>
+				</div> -->
 
-               <!--  <div class="form-group col-md-4">
-                  <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                       <option selected>Choose...</option>
-                       <option>...</option>
+              <div class="form-group col-md-4">
+                  <label for="inputState">Estado actual: <strong><?php echo $row['estado']; ?></strong></label>
+                    <select name="estado" id="inputState" class="form-control">
+					   <option>en curso</option>
+					   <option>en espera</option>
+					   <option>finalizado</option>
                     </select>
-                </div> -->
+                </div> 
 
 
-                
 				<div class="row form-group">
 					<div class="col-sm-2">
 						<label class="control-label" style="position:relative; top:7px;">Detalle:</label>
