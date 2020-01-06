@@ -65,6 +65,7 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Dirección</th>
+					<th>fecha y hora</th>
 					<th>Acción</th>
 				</thead>
 				<tbody>
@@ -83,6 +84,7 @@
 						    		<td><?php echo $row['firstname']; ?></td>
 						    		<td><?php echo $row['lastname']; ?></td>
 						    		<td><?php echo $row['address']; ?></td>
+						    		<td><?php echo $row['fechaHora']; ?></td>
 						    		<td>
 						    			<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="fa fa-edit"></span> Editar</a>
 						    			<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="fa fa-trash"></span> Eliminar</a>

@@ -42,7 +42,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Fecha:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="fecha" value="<?php  echo date('D, d M Y H:i:s')?>">
+						<input type="text" class="form-control" name="fechaHora" value="<?php  echo date('D, d M Y H:i:s')?>">
 					</div>
 				</div>
             </div> 
