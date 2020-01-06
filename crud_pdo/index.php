@@ -153,14 +153,20 @@
          type: "GET",
          url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
          success: function (response) {
-             $('#estado').html(response)
+             if (response == 'finalizado') {
+                $('#estado').html(response).css('background-color','#000');
+                //console.log(response)
+             } else if (response == 'en curso') {
+                $('#estado').html(response).css('background-color','#fff');
+             }
          },
          error: function() {
             alert("Error");
         }
      }); 
     }
-    setInterval(function(){ viewData(); }, 2000);
+
+    setInterval(function(){ viewData(); }, 1300);
 </script> 
 
 </html>

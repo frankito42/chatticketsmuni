@@ -7,13 +7,8 @@
                 $db = $database->open();
                 try {
                     $sql = 'SELECT * FROM members';
-                  
                         foreach ($db->query($sql) as $row) {
-                            ?>
-                            <tr>
-                                <td><?php echo $row['estado']; ?></td>
-                            </tr>
-                            <?php
+                            ?><?php echo $row['estado']; ?><?php
                     }
                 } catch (PDOException $e) {
                     echo "There is some problem in connection: " . $e->getMessage();
