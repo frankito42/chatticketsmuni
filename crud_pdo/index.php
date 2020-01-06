@@ -154,10 +154,13 @@
          url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
          success: function (response) {
              if (response == 'finalizado') {
-                $('#estado').html(response).css('background-color','#000');
-                //console.log(response)
+                $('#estado').html(response).css('background-color','#37474f');
              } else if (response == 'en curso') {
-                $('#estado').html(response).css('background-color','#fff');
+                $('#estado').html(response).css('background-color','#64dd17');
+             } else if (response == 'pendiete') {
+                $('#estado').html(response).css('background-color','#ffd600');
+             }else if (response == 'cancelado') {
+                $('#estado').html(response).css('background-color','#ff5252');
              }
          },
          error: function() {

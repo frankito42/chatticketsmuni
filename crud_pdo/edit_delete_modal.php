@@ -31,8 +31,9 @@
                   <label for="inputState">Estado actual: <strong><?php echo $row['estado']; ?></strong></label>
                     <select name="estado" id="inputState" class="form-control">
 					   <option>en curso</option>
-					   <option>en espera</option>
+					   <option>pendiete</option>
 					   <option>finalizado</option>
+					   <option>cancelado</option>
                     </select>
                 </div> 
 
