@@ -168,8 +168,8 @@
         }
      }); 
     }
-
     setInterval(function(){ viewData(); }, 1300);
+    //https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FF5252
 </script> 
 
 </html>
