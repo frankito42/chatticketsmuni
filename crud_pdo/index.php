@@ -113,14 +113,7 @@
     
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
-                                 
-                                <td>
-                                    <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
-                                       data-toggle="modal"><span class="fa fa-edit"></span> Editar</a>
-                                    <a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm"
-                                       data-toggle="modal"><span class="fa fa-trash"></span> Eliminar</a>
-                                </td>
-                                <?php include('edit_delete_modal.php'); ?>
+                             
                             </tr>
                             <?php
                         }
