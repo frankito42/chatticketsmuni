@@ -58,6 +58,8 @@ if (!isset($_SESSION)) {
     <div class="row">
         <div class="col-sm-12">
             <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nuevo</a>
+            <a href="#addnewdifusion" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nueva difusión</a>
+
             <?php
             
             if (isset($_SESSION['message'])) {
