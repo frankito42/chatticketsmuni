@@ -98,7 +98,7 @@ if (!isset($_SESSION)) {
                 $contador = 0;
                 $array=[];
                 try {
-                    $sql = 'SELECT * FROM members';
+                    $sql = 'SELECT * FROM members ORDER BY id desc';
                     //$sql = 'SELECT * FROM members ORDER BY id desc limit 3';
                     if ($_SESSION['privilegio'] == 0) {
                         $privi = $_SESSION['privilegio'];
@@ -169,7 +169,8 @@ if (!isset($_SESSION)) {
          success: function (response) {
            
      
-            const sda = JSON.parse(response)
+            const sda2 = JSON.parse(response)
+            const sda = sda2.reverse();
             for (const [key, value] of Object.entries(sda)) {
                 //console.log(value+key);
          
