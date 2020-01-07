@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if (!isset($_SESSION)) {
@@ -160,13 +159,18 @@ if (!isset($_SESSION)) {
          type: "GET",
          url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
          success: function (response) {
+            console.log(response)
              if (response == 'finalizado') {
+                 console.log("finalizado")
                 $('#estado').html(response).css('background-color','#37474f');
              } else if (response == 'en curso') {
+                console.log("en curso")
                 $('#estado').html(response).css('background-color','#64dd17');
              } else if (response == 'pendiete') {
+                console.log("pendiete")
                 $('#estado').html(response).css('background-color','#ffd600');
              }else if (response == 'cancelado') {
+                console.log("cancelado")
                 $('#estado').html(response).css('background-color','#ff5252');
              }
          },
