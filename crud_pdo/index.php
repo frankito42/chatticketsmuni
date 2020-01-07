@@ -174,7 +174,7 @@ if (!isset($_SESSION)) {
          
              if (value == 'finalizado') {
                 // console.log("finalizado")
-                $('#'+value+key).html(value).css('background-color','#37474f');
+                $('#'+value+key).html(value).css('background-color','#c1d5e0');
 
              } else if (value == "en curso") {
                 //console.log("en curso")
