@@ -167,17 +167,11 @@ if (!isset($_SESSION)) {
          url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
          success: function (response) {
            
-            /* for (const iterator of response) {
-                console.log(iterator)
-            }  */
-           
+     
             const sda = JSON.parse(response)
-            //console.log( JSON.parse(response))
             for (const [key, value] of Object.entries(sda)) {
-                console.log(value+key);
-           // sda.forEach(element => {
-           // console.log(value+key)
-           
+                //console.log(value+key);
+         
              if (value == 'finalizado') {
                 // console.log("finalizado")
                 $('#'+value+key).html(value).css('background-color','#37474f');
