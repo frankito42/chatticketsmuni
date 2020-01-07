@@ -107,7 +107,7 @@ if (!isset($_SESSION)) {
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
                                 
-                                <td id="estado" ><?php echo $row['estado']; ?></td>
+                                <td id="<?php echo $row['estado']; ?>" ><?php echo $row['estado']; ?></td>
                                  
                                 <td>
                                     <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
@@ -128,7 +128,7 @@ if (!isset($_SESSION)) {
                                 <td><?php echo $row['usuario']; ?></td>
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
-                                <td id="estado" ><?php echo $row['estado']; ?></td>
+                                <td id="<?php echo $row['estado']; ?>" ><?php echo $row['estado']; ?></td>
                              
                             </tr>
                             <?php
@@ -159,28 +159,29 @@ if (!isset($_SESSION)) {
          type: "GET",
          url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
          success: function (response) {
-            /* console.log(response)
-            for (const iterator of object) {
-                
-            } */
+           
+            /* for (const iterator of response) {
+                console.log(iterator)
+            }  */
            
             const sda = JSON.parse(response)
             //console.log( JSON.parse(response))
+ 
             sda.forEach(element => {
-            // console.log(element)
+            console.log(element)
            
              if (element == 'finalizado') {
                 // console.log("finalizado")
-                $('#estado').html(element).css('background-color','#37474f');
+                $('#finalizado').html(element).css('background-color','#37474f');
              } else if (element == 'en curso') {
                 //console.log("en curso")
-                $('#estado').html(element).css('background-color','#64dd17');
-             } else if (element == 'pendiete') {
+                $('#en curso').html(element).css('background-color','#64dd17');
+             } else if (element == 'pendiente') {
                // console.log("pendiete")
-                $('#estado').html(element).css('background-color','#ffd600');
+                $('#pendiente').html(element).css('background-color','#ffd600');
              }else if (element == 'cancelado') {
                 //console.log("cancelado")
-                $('#estado').html(element).css('background-color','#ff5252');
+                $('#cancelado').html(element).css('background-color','#ff5252');
              }
             });  
          },
