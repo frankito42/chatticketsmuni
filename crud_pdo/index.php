@@ -48,10 +48,7 @@ if (!isset($_SESSION)) {
                     <a class="nav-link text-warning" href="code.html" target="_blank"><i class="fa fa-code"></i>
                         Sistemas en PHP</a>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" placeholder="Search" type="text">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+           <a href="login/cerrarsession.php"><input type="button" value="cerrar session"></a>
         </div>
     </nav>
     <h1 class="page-header text-center">PHP CRUD usando PDO</h1>
