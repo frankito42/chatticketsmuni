@@ -128,7 +128,7 @@ if (!isset($_SESSION)) {
                                 <td><?php echo $row['usuario']; ?></td>
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
-                                <td><?php echo $row['estado']; ?></td>
+                                <td id="estado" ><?php echo $row['estado']; ?></td>
                              
                             </tr>
                             <?php
