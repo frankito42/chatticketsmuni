@@ -98,7 +98,7 @@ if (!isset($_SESSION)) {
                 $contador = 0;
                 $array=[];
                 try {
-                    $sql = 'SELECT * FROM members ORDER BY id desc';
+                    $sql = "SELECT * FROM members ORDER BY id desc";
                     //$sql = 'SELECT * FROM members ORDER BY id desc limit 3';
                     if ($_SESSION['privilegio'] == 0) {
                         $privi = $_SESSION['privilegio'];
@@ -154,6 +154,15 @@ if (!isset($_SESSION)) {
                 </tbody>
             </table>
         </div>
+        <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 <?php include('add_modal.php'); ?>
