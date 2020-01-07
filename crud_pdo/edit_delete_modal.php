@@ -30,7 +30,7 @@
               <div class="form-group col-md-4">
                   <label for="inputState">Estado actual: <strong><?php echo $row['estado']; ?></strong></label>
                     <select name="estado" id="inputState" class="form-control">
-					   <option>en curso</option>
+					   <option value="curso">en curso</option>
 					   <option>pendiente</option>
 					   <option>finalizado</option>
 					   <option>cancelado</option>
@@ -43,7 +43,7 @@
 						<label class="control-label" style="position:relative; top:7px;">Detalle:</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="detalle" value="<?php echo $row['detalle']; ?>"  readonly="readonly">
+						<input type="text" class="form-control" name="detalle" value="<?php echo $row['detalle']; ?>"  >
 					</div>
                 </div>
                 

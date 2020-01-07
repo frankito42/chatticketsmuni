@@ -176,9 +176,9 @@ if (!isset($_SESSION)) {
                 // console.log("finalizado")
                 $('#'+value+key).html(value).css('background-color','#c1d5e0');
 
-             } else if (value == "en curso") {
-                //console.log("en curso")
-                $('#'+value+key).html(value).css('background-color','#64dd17');
+             } else if (value == 'curso') {
+               console.log(value+key)
+                $('#'+value+key).html("en curso").css('background-color','#64dd17');
 
              } else if (value == 'pendiente') {
                 // console.log("pendiete")
