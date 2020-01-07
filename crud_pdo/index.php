@@ -159,20 +159,30 @@ if (!isset($_SESSION)) {
          type: "GET",
          url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
          success: function (response) {
-            console.log(response)
-             if (response == 'finalizado') {
-                 console.log("finalizado")
-                $('#estado').html(response).css('background-color','#37474f');
-             } else if (response == 'en curso') {
-                console.log("en curso")
-                $('#estado').html(response).css('background-color','#64dd17');
-             } else if (response == 'pendiete') {
-                console.log("pendiete")
-                $('#estado').html(response).css('background-color','#ffd600');
-             }else if (response == 'cancelado') {
-                console.log("cancelado")
-                $('#estado').html(response).css('background-color','#ff5252');
+            /* console.log(response)
+            for (const iterator of object) {
+                
+            } */
+           
+            const sda = JSON.parse(response)
+            //console.log( JSON.parse(response))
+            sda.forEach(element => {
+            // console.log(element)
+           
+             if (element == 'finalizado') {
+                // console.log("finalizado")
+                $('#estado').html(element).css('background-color','#37474f');
+             } else if (element == 'en curso') {
+                //console.log("en curso")
+                $('#estado').html(element).css('background-color','#64dd17');
+             } else if (element == 'pendiete') {
+               // console.log("pendiete")
+                $('#estado').html(element).css('background-color','#ffd600');
+             }else if (element == 'cancelado') {
+                //console.log("cancelado")
+                $('#estado').html(element).css('background-color','#ff5252');
              }
+            });  
          },
          error: function() {
             alert("Error");

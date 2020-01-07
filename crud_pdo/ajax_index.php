@@ -9,8 +9,18 @@
                 try {
                     $sql = 'SELECT * FROM members';
                         foreach ($db->query($sql) as $row) {
-                             echo $row['estado'];  
+                             /* echo $row['estado'];   */
+                             array_push($array, $row['estado']);
+
+                             /* foreach ($array as $key) {
+                                echo $key;
+                             } */
                     }
+                    /* foreach ($array as $key) {
+                        echo $key;
+                    }
+                    print_r($array); */
+                    echo json_encode($array);
                 } catch (PDOException $e) {
                     echo "There is some problem in connection: " . $e->getMessage();
                 }
