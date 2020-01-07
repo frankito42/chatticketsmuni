@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION)) {
+  header("location: login/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,7 +59,7 @@
         <div class="col-sm-12">
             <a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="fa fa-plus"></span> Nuevo</a>
             <?php
-            session_start();
+            
             if (isset($_SESSION['message'])) {
                 ?>
                 <div class="alert alert-dismissible alert-success" style="margin-top:20px;">
