@@ -99,6 +99,7 @@ if (!isset($_SESSION)) {
                 $array=[];
                 try {
                     $sql = 'SELECT * FROM members';
+                    //$sql = 'SELECT * FROM members ORDER BY id desc limit 3';
                     if ($_SESSION['privilegio'] == 0) {
                         $privi = $_SESSION['privilegio'];
                         foreach ($db->query($sql) as $row) {
@@ -177,7 +178,7 @@ if (!isset($_SESSION)) {
                 $('#'+value+key).html(value).css('background-color','#c1d5e0');
 
              } else if (value == 'curso') {
-               console.log(value+key)
+               //console.log(value+key)
                 $('#'+value+key).html("en curso").css('background-color','#64dd17');
 
              } else if (value == 'pendiente') {
