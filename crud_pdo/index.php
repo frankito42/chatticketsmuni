@@ -95,11 +95,16 @@ if (!isset($_SESSION)) {
 
                 $database = new Connection();
                 $db = $database->open();
+                $contador = 0;
+                $array=[];
                 try {
                     $sql = 'SELECT * FROM members';
                     if ($_SESSION['privilegio'] == 0) {
                         $privi = $_SESSION['privilegio'];
                         foreach ($db->query($sql) as $row) {
+                            
+                            array_push($array, $row['estado']);
+                            $items= $row['estado']."".(string)$contador
                             ?>
                             <tr>
                                 <td><?php echo $row['id']; ?></td>
@@ -107,7 +112,7 @@ if (!isset($_SESSION)) {
                                 <td><?php echo $row['detalle']; ?></td>
                                 <td><?php echo $row['fechaHora']; ?></td>
                                 
-                                <td id="<?php echo $row['estado']; ?>" ><?php echo $row['estado']; ?></td>
+                                <td id="<?php echo $items; ?>" ><?php echo $row['estado']; ?></td>
                                  
                                 <td>
                                     <a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm"
@@ -117,6 +122,8 @@ if (!isset($_SESSION)) {
                                 </td>
                                 <?php include('edit_delete_modal.php'); ?>
                             </tr>
+                            <?php $contador+=1; ?>
+                            
                             <?php
                         }
                     }elseif ($_SESSION['privilegio'] == 1) {
@@ -166,24 +173,30 @@ if (!isset($_SESSION)) {
            
             const sda = JSON.parse(response)
             //console.log( JSON.parse(response))
- 
-            sda.forEach(element => {
-            console.log(element)
+            for (const [key, value] of Object.entries(sda)) {
+                console.log(value+key);
+           // sda.forEach(element => {
+           // console.log(value+key)
            
-             if (element == 'finalizado') {
+             if (value == 'finalizado') {
                 // console.log("finalizado")
-                $('#finalizado').html(element).css('background-color','#37474f');
-             } else if (element == 'en curso') {
+                $('#'+value+key).html(value).css('background-color','#37474f');
+
+             } else if (value == value+key) {
                 //console.log("en curso")
-                $('#en curso').html(element).css('background-color','#64dd17');
-             } else if (element == 'pendiente') {
-               // console.log("pendiete")
-                $('#pendiente').html(element).css('background-color','#ffd600');
-             }else if (element == 'cancelado') {
+                $('#'+value+key).html(value).css('background-color','#64dd17');
+
+             } else if (value == 'pendiente') {
+                // console.log("pendiete")
+                $('#'+value+key).html(value).css('background-color','#ffd600');
+
+             }else if (value == 'cancelado') {
                 //console.log("cancelado")
-                $('#cancelado').html(element).css('background-color','#ff5252');
+                $('#'+value+key).html(value).css('background-color','#ff5252');
              }
-            });  
+            } 
+
+            //});  
          },
          error: function() {
             alert("Error");
