@@ -227,6 +227,7 @@ if (!isset($_SESSION['usuario'])) {
     <script src="bootstrap/js/custom.js"></script>
 </body>
 <script>
+//https://stackoverflow.com/questions/6621231/passing-php-variable-in-onclick-function
 function viewData() {
     $.ajax({
         type: "GET",
