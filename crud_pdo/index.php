@@ -102,9 +102,36 @@ if (!isset($_SESSION['usuario'])) {
                 try {
                     $sql = "SELECT * FROM members ORDER BY id desc";
                     //$sql = 'SELECT * FROM members ORDER BY id desc limit 3';
+                    $ticketsColum=$db->query($sql);
+
+                    $articulos_x_pagina=3;
+
+                    $total_articulos_db=$ticketsColum->rowCount();
+                    
+                    $paginas=$total_articulos_db/3;
+                    
+                    $paginas=ceil($paginas);
+                    
+            
+
+                    if (!$_GET) {
+                      header('location: index.php?paginas=1');
+                  }
+                  
+                  $iniciar=($_GET['paginas']-1)*$articulos_x_pagina;
+                  $sql_articulos="SELECT * FROM `members` ORDER BY id desc limit  :iniciar , :narticulo";
+                  $sentencia_articulos=$db->prepare($sql_articulos);
+                  $sentencia_articulos->bindParam(':iniciar',$iniciar,PDO::PARAM_INT);
+                  $sentencia_articulos->bindParam(':narticulo',$articulos_x_pagina,PDO::PARAM_INT);
+                  $sentencia_articulos->execute();
+                  $resultados_articulos=$sentencia_articulos->fetchAll();
+
+
+
+
                     if ($_SESSION['privilegio'] == 0) {
                         $privi = $_SESSION['privilegio'];
-                        foreach ($db->query($sql) as $row) {
+                        foreach ($resultados_articulos as $row) {
                             
                             array_push($array, $row['estado']);
                             $items= $row['estado']."".(string)$contador
@@ -129,6 +156,9 @@ if (!isset($_SESSION['usuario'])) {
 
             <?php
                         }
+
+
+                        
                     }elseif ($_SESSION['privilegio'] == 1) {
                         $privi = $_SESSION['privilegio'];
                         foreach ($db->query($sql) as $row) {
@@ -157,14 +187,27 @@ if (!isset($_SESSION['usuario'])) {
         </table>
       </div>
       <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
+  <ul class="pagination">
+    <li class="page-item <?php echo $_GET['paginas']<=1 ? 'disabled' : '' ?>">
+    <a class="page-link" href="index.php?paginas=<?php echo $_GET['paginas']-1?>">anterior</a>
+    </li>
+
+
+
+    <?php for ($i=0; $i < $paginas ; $i++):?>
+    <li class="page-item <?php echo $_GET['paginas']==$i+1 ? 'active' : '' ?>">
+     <a class="page-link" href="index.php?paginas=<?php echo $i+1;?>"><?php echo $i+1;?></a>
+    </li>
+    <?php endfor ?>
+    
+
+
+
+    <li class="page-item <?php echo $_GET['paginas']>=$paginas ? 'disabled' : '' ?>">
+    <a class="page-link" href="index.php?paginas=<?php echo $_GET['paginas']+1?>">siguiente</a>
+    </li>
+  </ul>
+</nav>
     </div>
   </div>
   <?php include('add_modal.php'); ?>
