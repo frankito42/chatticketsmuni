@@ -3,7 +3,7 @@
 $server = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'paginacion_2';
+$database = 'crud1'; //paginacion_2
 
 try {
     $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);

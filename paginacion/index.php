@@ -8,13 +8,13 @@ $records = $conn->prepare('SELECT * FROM `articulos` WHERE 1');
     
         $results = ($records->fetchAll(PDO::FETCH_ASSOC));
 
-$articulos_x_pagina=3;
+/* $articulos_x_pagina=3;
 
 $total_articulos_db=$records->rowCount();
 
 $paginas=$total_articulos_db/3;
 
-$paginas=ceil($paginas);
+$paginas=ceil($paginas); */
 
 
 
