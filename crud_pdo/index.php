@@ -108,11 +108,11 @@ if (!isset($_SESSION['usuario'])) {
                    $contador = 0;
                    $array=[];
                    try {
-                       $sql = "SELECT * FROM members ORDER BY id desc";
-                       //$sql = 'SELECT * FROM members ORDER BY id desc limit 3';
-                       if ($_SESSION['privilegio'] == 0) {
-                           $privi = $_SESSION['privilegio'];
-                           foreach ($db->query($sql) as $row) {
+                     $sql = "SELECT * FROM members ORDER BY id desc";
+                     //$sql = 'SELECT * FROM members ORDER BY id desc limit 3';
+                     if ($_SESSION['privilegio'] == 0) {
+                       $privi = $_SESSION['privilegio'];
+                       foreach ($db->query($sql) as $row) {
                                
                                array_push($array, $row['estado']);
                                $items= $row['estado']."".(string)$contador
@@ -181,6 +181,7 @@ function viewData() {
     url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
     success: function(response) {
 
+      console.log("sadsad")
 
       const sda2 = JSON.parse(response)
       const sda = sda2.reverse();
