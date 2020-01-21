@@ -1,7 +1,10 @@
 <?php
 	include "db.php";
+	session_start();
 	///consultamos a la base
 	$consulta = "SELECT * FROM chat ORDER BY id DESC";
+	$d = $_SESSION['privilegio'];
+	//$consulta = "SELECT * FROM chat WHERE nombre AS `$d` ORDER BY id DESC";
 	$ejecutar = $conexion->query($consulta); 
 	while($fila = $ejecutar->fetch_array()) : 
 ?>

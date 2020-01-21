@@ -56,7 +56,7 @@ if (!isset($_SESSION['usuario'])) {
             <a class="nav-link text-warning" href="code.html" target="_blank"><i class="fa fa-code"></i>
               Sistemas en PHP</a>
         </ul>
-        <a href="login/cerrarsession.php"><input type="button" value="cerrar session"></a>
+        <a href="login/cerrarsession.php"><input type="button" class="btn btn-warning" value="cerrar session"></a>
       </div>
     </nav>
     <h1 class="page-header text-center">PHP CRUD usando PDO</h1>
@@ -130,6 +130,10 @@ if (!isset($_SESSION['usuario'])) {
                     class="fa fa-edit"></span> Editar</a>
                 <a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span
                     class="fa fa-trash"></span> Eliminar</a>
+
+                <!-- CHAT BUTTON -->
+                <a href="chat_ajax" class="btn btn-primary btn-sm">Chat!</a>
+
               </td>
               <?php include('edit_delete_modal.php'); ?>
             </tr>
@@ -137,9 +141,6 @@ if (!isset($_SESSION['usuario'])) {
 
             <?php
                         }
-
-
-                        
                     }elseif ($_SESSION['privilegio'] == 1) {
                         $privi = $_SESSION['privilegio'];
                         foreach ($db->query($sql) as $row) {
@@ -166,12 +167,12 @@ if (!isset($_SESSION['usuario'])) {
                 ?>
           </tbody>
         </table>
-     
-  </div>
-  <?php include('add_modal.php'); ?>
-  <script src="bootstrap/js/jquery.min.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
-  <script src="bootstrap/js/custom.js"></script>
+
+      </div>
+      <?php include('add_modal.php'); ?>
+      <script src="bootstrap/js/jquery.min.js"></script>
+      <script src="bootstrap/js/bootstrap.js"></script>
+      <script src="bootstrap/js/custom.js"></script>
 </body>
 <script>
 //https://stackoverflow.com/questions/6621231/passing-php-variable-in-onclick-function
