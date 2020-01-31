@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "db.php";
 ?>
 <!DOCTYPE html>
@@ -34,7 +35,7 @@ include "db.php";
 		</div>
 
 		<form method="POST" action="index.php">
-			<input type="text" name="nombre" placeholder="Ingresa tu nombre">			
+	        		
 			<textarea name="mensaje" placeholder="Ingresa tu mensaje"></textarea>
 			<input type="submit" name="enviar" value="Enviar">
 		</form>
@@ -42,7 +43,7 @@ include "db.php";
 		<?php
 			if (isset($_POST['enviar'])) {
 				
-				$nombre = $_POST['nombre'];
+				$nombre = $_SESSION['usuario'];
 				$mensaje = $_POST['mensaje'];
 
 

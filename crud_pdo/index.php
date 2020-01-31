@@ -22,7 +22,7 @@ if (!isset($_SESSION['usuario'])) {
   <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.css">
 </head>
 
-<body onload="viewData()">
+<body >
   <div class="container">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="code.html" target="_blank">AnthonCode</a>
@@ -132,7 +132,7 @@ if (!isset($_SESSION['usuario'])) {
                     class="fa fa-trash"></span> Eliminar</a>
 
                 <!-- CHAT BUTTON -->
-                <a href="chat_ajax" class="btn btn-primary btn-sm">Chat!</a>
+                <a href="chat_ajax/index.php" class="btn btn-primary btn-sm">Chat!</a>
 
               </td>
               <?php include('edit_delete_modal.php'); ?>
@@ -176,7 +176,7 @@ if (!isset($_SESSION['usuario'])) {
 </body>
 <script>
 //https://stackoverflow.com/questions/6621231/passing-php-variable-in-onclick-function
-function viewData() {
+/* function viewData() {
   $.ajax({
     type: "GET",
     url: "http://localhost/chatticketsmuni/crud_pdo/ajax_index.php",
@@ -213,10 +213,10 @@ function viewData() {
       alert("Error");
     }
   });
-}
-setInterval(function() {
+} */
+/* setInterval(function() {
   viewData();
-}, 1300);
+}, 1300); */
 //https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FF5252
 </script>
 

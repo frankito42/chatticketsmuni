@@ -18,6 +18,7 @@ $password=$_POST['password'];
 	if ($results!=null) {
 		$_SESSION['usuario'] =  $usuario;
 		$_SESSION['privilegio'] =  $results['privilegio'];
+		$_SESSION['user']=$results;
 		echo '<script>location.href ="../../../index.php";</script>';
 	}else{
 		echo '<script>alert("El ususario no existe")<script>';
